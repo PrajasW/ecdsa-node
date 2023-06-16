@@ -53,4 +53,6 @@ Signature {
   recovery: 1
 }
 ```
-![Alt text](image.png)
+
+## Transaction
+![image](https://github.com/PrajasW/ecdsa-node/assets/74056138/6368ccd3-5877-4c81-8ba3-49efca38337c)
