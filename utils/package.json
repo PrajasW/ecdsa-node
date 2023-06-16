@@ -1,0 +1,15 @@
+{
+  "name": "utils",
+  "version": "1.0.0",
+  "description": "```bash\r node generate.js\r ```\r to generate a private key and a private key and address\r > Keep this private key secret and DO NOT SHARE IT",
+  "main": "generate.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ethereum-cryptography": "^2.0.0"
+  }
+}

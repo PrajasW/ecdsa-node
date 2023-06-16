@@ -1,22 +1,17 @@
-## ECDSA Node
-
-This project is an example of using a client and server to facilitate transfers between different addresses. Since there is just a single server on the back-end handling transfers, this is clearly very centralized. We won't worry about distributed consensus for this project.
-
-However, something that we would like to incoporate is Public Key Cryptography. By using Elliptic Curve Digital Signatures we can make it so the server only allows transfers that have been signed for by the person who owns the associated address.
-
-### Video instructions
-For an overview of this project as well as getting started instructions, check out the following video:
-
-https://www.loom.com/share/0d3c74890b8e44a5918c4cacb3f646c4
+## ECDSA NODE
+This project will describe how transactions work on the blockchain.
+> The network is still centralized as you are running it on your device, so it doesn't replicate blockchains but gives us a basic idea.
  
 ### Client
-
 The client folder contains a [react app](https://reactjs.org/) using [vite](https://vitejs.dev/). To get started, follow these steps:
 
 1. Open up a terminal in the `/client` folder
 2. Run `npm install` to install all the depedencies
 3. Run `npm run dev` to start the application 
 4. Now you should be able to visit the app at http://127.0.0.1:5173/
+
+#### Transctions
+To make a transaction you will need to put in your public key the reciver's public key, amount you want to transfer and a message signed with your public key.
 
 ### Server
 
@@ -28,4 +23,34 @@ The server folder contains a node.js server using [express](https://expressjs.co
 
 The application should connect to the default server port (3042) automatically! 
 
-_Hint_ - Use [nodemon](https://www.npmjs.com/package/nodemon) instead of `node` to automatically restart the server on any changes.
+> You may edit the `server/index.js` file and change the initial balances there
+
+## Utils
+To get started:
+1. Open a terminal within the `/utils` folder 
+2. Run `npm install` to install all the depedencies 
+
+To send and recive funds you would need to set up a wallet
+### Generate A Wallet
+```bash
+node generate.js
+```
+to generate a private key and a private key and address
+> Keep this private key secret and DO NOT SHARE IT
+
+### Signature
+
+Make changes in utils/sign.js and put your private key, reciver's public key and the amount you want to send.
+
+You will recive a signed messaage keep note of the *r,s and recovery* as you will need it to enter it when you send a transaction
+
+```bash
+node sign.js
+
+Signature {
+  r: 10187057734768772572151456624558235510282114055562821402096535102789086376466n,
+  s: 41671454139765189342066431228164223132116482590945543039638384294043040072716n,
+  recovery: 1
+}
+```
+![Alt text](image.png)
